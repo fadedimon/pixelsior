@@ -1,0 +1,20 @@
+{
+  "name": "pixelsior",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "repository": "https://github.com/fadedimon/pixelsior.git",
+  "author": "Dmitry Baranov <fadedimon@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/redux-actions": "^2.6.1",
+    "parcel-bundler": "^1.12.3",
+    "prettier": "^1.18.2",
+    "redux": "^4.0.1",
+    "redux-actions": "^2.6.5",
+    "typescript": "^3.5.2"
+  },
+  "scripts": {
+    "dev": "parcel src/index.html --out-dir www",
+    "build": "parcel build src/index.ts --out-dir www"
+  }
+}
