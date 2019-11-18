@@ -14,7 +14,7 @@
     "typescript": "^3.5.2"
   },
   "scripts": {
-    "dev": "parcel src/index.html --out-dir www",
-    "build": "parcel build src/index.ts --out-dir www"
+    "dev": "parcel src/index.html --out-dir .dev_build",
+    "build": "parcel build src/index.html --out-dir docs"
   }
 }

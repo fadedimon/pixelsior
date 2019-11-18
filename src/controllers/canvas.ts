@@ -24,7 +24,7 @@ export function createCanvasController(params: CanvasControllerParams): CanvasCo
             return value * canvasZoom * canvasDpi;
         }
 
-        const { images, canvasPosition, canvasZoom, canvasDpi } = store.getState();
+        const { images, selectedImageId, canvasPosition, canvasZoom, canvasDpi } = store.getState();
 
         ctx.clearRect(0, 0, ctxWidth, ctxHeight);
 
@@ -39,6 +39,37 @@ export function createCanvasController(params: CanvasControllerParams): CanvasCo
             ctx.drawImage(image.elem, x, y, width, height);
             ctx.restore();
         });
+
+        const selected = images.find((image) => image.id === selectedImageId);
+
+        if (selected) {
+            const radius = 10;
+            const width = getPos(selected.width) + radius * 2;
+            const height = getPos(selected.height) + radius * 2;
+            const x = getPos(canvasPosition.x + selected.coords.x) - width / 2;
+            const y = getPos(canvasPosition.y + selected.coords.y) - height / 2;
+
+            ctx.save();
+            ctx.lineJoin = 'round';
+            ctx.lineWidth = 6;
+            ctx.strokeStyle = 'rgba(156, 39, 176, 0.9)';
+
+            ctx.globalCompositeOperation = 'multiply';
+
+            ctx.beginPath();
+            ctx.moveTo(x, y + radius);
+            ctx.arc(x + radius, y + radius, radius, Math.PI, (-1 * Math.PI) / 2);
+            ctx.lineTo(x + width - radius, y);
+            ctx.arc(x + width - radius, y + radius, radius, (-1 * Math.PI) / 2, 0);
+            ctx.lineTo(x + width, y + height - radius);
+            ctx.arc(x + width - radius, y + height - radius, radius, 0, Math.PI / 2);
+            ctx.lineTo(x + radius, y + height);
+            ctx.arc(x + radius, y + height - radius, radius, Math.PI / 2, Math.PI);
+            ctx.closePath();
+            ctx.stroke();
+
+            ctx.restore();
+        }
     }
 
     function handleDragging(e: MouseEvent | TouchEvent) {
@@ -136,6 +167,19 @@ export function createCanvasController(params: CanvasControllerParams): CanvasCo
         }
 
         toggleGlobalEventsListeners(true);
+    });
+
+    elem.addEventListener('mousewheel', (e: MouseWheelEvent) => {
+        e.preventDefault();
+
+        const { x, y } = store.getState().canvasPosition;
+
+        store.dispatch(
+            moveCanvas({
+                x: x - e.deltaX,
+                y: y - e.deltaY,
+            }),
+        );
     });
 
     return {};

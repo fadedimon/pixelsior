@@ -9,40 +9,31 @@
 </head>
 <body>
 
-    <header class="header">
-        <h1 class="header__title">
-            Pixelsior
-        </h1>
-    </header>
-
-    <ul class="controls">
-            <li class="controls__item">
-                <div class="zoom">
-                    <input type="file" class="js-file" />
-                </div>
-            </li>
-            <li class="controls__item">
-                <div class="zoom">
-                    <label class="zoom__label">Zoom:</label>
-                    <input name="zoom" value="100" type="number" class="zoom__input input js-zoom-control" />
-                </div>
-            </li>
-    </ul>
-
-    <canvas class="canvas js-canvas" ></canvas>
-
     <ul class="drop-area js-drop-area">
-        <li class="drop-area__item" data-type="normal">
-            <span class="drop-area__label">
-                Normal
-            </span>
-        </li>
         <li class="drop-area__item" data-type="difference">
             <span class="drop-area__label">
                 Difference
             </span>
         </li>
+        <li class="drop-area__item" data-type="normal">
+            <span class="drop-area__label">
+                Normal
+            </span>
+        </li>
     </ul>
+
+    <canvas class="canvas js-canvas" ></canvas>
+
+    <div class="content">
+        <img 
+            class="logo"
+            srcset="assets/logo_1x.png 1x, assets/logo_2x.png 2x" 
+            src="assets/logo_1x.png" 
+            width="80"
+            height="21.5"
+            alt="Pixelsior"
+        />
+    </div>
 
     <script src="index.ts"></script>
 </body>

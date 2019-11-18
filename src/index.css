@@ -9,70 +9,19 @@ body {
     margin: 0;
 }
 
-.button,
-.input {
-    font-size: 14px;
-    height: 24px;
-    box-sizing: border-box;
-    background: transparent;
-    border: 1px solid rgba(0,0,0, 0.1);
-    border-radius: 24px;
-    outline: none;
-    padding: 0 16px;
-}
-
 .button {
     cursor: pointer;
 }
 
-.input {
-    padding-right: 0;
+.content {
+    padding: 16px;
+    border-radius: 16px;
+    position: absolute;
+    top: 30px;
+    left: 34px;
 }
 
-.header {
-    padding: 8px 16px;
-    background: #fff;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 2;
-}
-.header__title {
-    color: rgba(0,0,0, 0.8);
-    font-size: 20px;
-    line-height: 24px;
-    font-weight: 700;
-    padding: 0;
-    margin: 0;
-}
-
-.controls {
-    list-style: none;
-    display: flex;
-    background: #fff;
-    padding: 8px 16px;
-    margin: 0 auto;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 2;
-}
-.controls__item {
-    display: inline-block;
-    vertical-align: middle;
-    padding: 0 8px;
-    margin: 0;
-}
-
-.zoom {
-    font-size: 14px;
-    line-height: 20px;
-}
-.zoom__input {
-    width: 50px;
-    border: 0;
-    padding: 0;
-}
+/* Cancas */
 
 .canvas {
     width: 100%;
@@ -81,8 +30,10 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 2;
 }
+
+/* Drag and drop area */
 
 .drop-area {
     list-style: none;

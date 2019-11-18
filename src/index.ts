@@ -8,7 +8,6 @@ import { addImage } from './actions/addImage';
 // Controllers
 import { createCanvasController } from './controllers/Canvas';
 import { createDragAndDropController } from './controllers/dragAndDrop';
-import { createFileUploaderController } from './controllers/fileUploader';
 import { createKeyboardController } from './controllers/keyboard';
 
 // Elements
@@ -26,5 +25,4 @@ store.subscribe(() => {
 
 createCanvasController({ store, elem: elems.canvas });
 createDragAndDropController({ store, addImage, dropAreaElem: elems.dropArea });
-createFileUploaderController({ store, addImage, fileElem: elems.file });
 createKeyboardController({ store });
