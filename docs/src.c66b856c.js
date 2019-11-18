@@ -116,4 +116,4 @@ function l(l,n){return function t(){null==n&&(n=l.length);var c=[].slice.call(ar
 },{"../_actionCreators":"cX62"}],"7QCb":[function(require,module,exports) {
 "use strict";exports.__esModule=!0;var e=require("redux"),r=require("./reducers"),o=require("./actions/addImage"),a=require("./controllers/Canvas"),t=require("./controllers/dragAndDrop"),s=require("./controllers/keyboard"),c={canvas:document.querySelector(".js-canvas"),file:document.querySelector(".js-file"),dropArea:document.querySelector(".js-drop-area")},d=e.createStore(r.reducers);d.subscribe(function(){console.log("Store update: ",d.getState())}),a.createCanvasController({store:d,elem:c.canvas}),t.createDragAndDropController({store:d,addImage:o.addImage,dropAreaElem:c.dropArea}),s.createKeyboardController({store:d});
 },{"redux":"aV+f","./reducers":"+i7R","./actions/addImage":"YtmZ","./controllers/Canvas":"hlVr","./controllers/dragAndDrop":"miS8","./controllers/keyboard":"2Zkf"}]},{},["7QCb"], null)
-//# sourceMappingURL=/src.c66b856c.js.map
+//# sourceMappingURL=src.c66b856c.js.map
