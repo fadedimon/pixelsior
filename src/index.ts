@@ -9,6 +9,7 @@ import { addImage } from './actions/addImage';
 import { createCanvasController } from './controllers/Canvas';
 import { createDragAndDropController } from './controllers/dragAndDrop';
 import { createKeyboardController } from './controllers/keyboard';
+import { createWelcome } from './controllers/welcome';
 
 // Elements
 const elems = {
@@ -26,3 +27,4 @@ store.subscribe(() => {
 createCanvasController({ store, elem: elems.canvas });
 createDragAndDropController({ store, addImage, dropAreaElem: elems.dropArea });
 createKeyboardController({ store });
+createWelcome();

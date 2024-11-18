@@ -45,7 +45,7 @@ body {
     align-items: stretch;
     visibility: hidden;
     box-sizing: border-box;
-    background: rgba(255,255,255, 0.1);
+    background: rgba(255, 255, 255, 0.1);
     padding: 0;
     margin: 0;
     position: fixed;
@@ -54,7 +54,7 @@ body {
     z-index: 3;
 }
 .drop-area::after {
-    content: '';
+    content: "";
     width: 100%;
     height: 100%;
     background: transparent;
@@ -64,11 +64,11 @@ body {
 }
 .drop-area_visible_yes {
     visibility: visible;
-    background: rgba(255,255,255, 0.9);
+    background: rgba(255, 255, 255, 0.9);
 }
 .drop-area_visible_semi {
     visibility: visible;
-    background: rgba(255,255,255, 0);
+    background: rgba(255, 255, 255, 0);
 }
 .drop-area__item {
     flex-grow: 1;
@@ -88,15 +88,15 @@ body {
     transform: translateY(0);
 }
 .drop-area__item:nth-child(1) {
-    background: rgba(0,0,0, 0.05);
+    background: rgba(0, 0, 0, 0.05);
     transition-delay: 0.1s;
 }
 .drop-area__item:nth-child(2) {
-    background: rgba(0,0,0, 0.1);
+    background: rgba(0, 0, 0, 0.1);
     transition-delay: 0.15s;
 }
 .drop-area_visible_semi .drop-area__item:nth-child(1) {
-    background: rgba(0,0,0, 0.05);
+    background: rgba(0, 0, 0, 0.05);
     transition-delay: 0.15s;
 }
 .drop-area_visible_semi .drop-area__item:nth-child(2) {
@@ -108,11 +108,46 @@ body {
     line-height: 34px;
 }
 .drop-area__label::before {
-    content: 'Bend. option:';
-    color: rgba(0,0,0, 0.5);
+    content: "Bend. option:";
+    color: rgba(0, 0, 0, 0.5);
     font-size: 9px;
     font-weight: 500;
     line-height: 11px;
     text-transform: uppercase;
     display: block;
+}
+
+/* Welcome */
+
+.welcome {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 13px;
+    line-height: 18px;
+    font-family: "Courier New", Courier, monospace;
+    user-select: none;
+    pointer-events: none;
+    position: absolute;
+    bottom: 30px;
+    left: 34px;
+    list-style: none;
+    max-width: 350px;
+    padding: 0;
+    margin: 0;
+}
+
+.welcome__item {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    transition: height 0.3s, opacity 0.3s;
+}
+
+.welcome__item > .welcome__item-inner {
+    padding: 9px 0 0;
+}
+
+.welcome__item:first-child > .welcome__item-inner {
+    padding: 0;
 }

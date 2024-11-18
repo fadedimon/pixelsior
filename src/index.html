@@ -1,40 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pixelsior — You can do better</title>
-    <link rel="stylesheet" href="index.css" />
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Pixelsior — You can do better</title>
+        <link rel="stylesheet" href="index.css" />
+    </head>
+    <body>
+        <ul class="welcome js-welcome">
+            <li class="welcome__item js-welcome__item">
+                <div class="welcome__item-inner">Welcome to Pixelsior!</div>
+            </li>
+            <li class="welcome__item js-welcome__item">
+                <div class="welcome__item-inner">
+                    Pixelsior is a simple tool to compare how well your html+css
+                    matches the design.
+                </div>
+            </li>
+            <li class="welcome__item js-welcome__item">
+                <div class="welcome__item-inner">
+                    Here is a simple guide on how to use it:
+                </div>
+            </li>
+            <li class="welcome__item js-welcome__item">
+                <div class="welcome__item-inner">
+                    First, open your design, make sure the scale is 100%. Take a
+                    screenshot of the element you are interested in and drag it
+                    to this page.
+                </div>
+            </li>
+            <li class="welcome__item js-welcome__item">
+                <div class="welcome__item-inner">
+                    Next, open your html+css, scale the page to 100%, take a
+                    screenshot of the same element and drag it here.
+                </div>
+            </li>
+            <li class="welcome__item js-welcome__item">
+                <div class="welcome__item-inner">
+                    Now that there are 2 images on this page, just drag the
+                    second one on top of the first!
+                </div>
+            </li>
+            <li class="welcome__item js-welcome__item">
+                <div class="welcome__item-inner">
+                    The better the pixels match each other in terms of color,
+                    the blacker it will be.
+                </div>
+            </li>
+            <li class="welcome__item js-welcome__item">
+                <div class="welcome__item-inner">
+                    The greater the difference, the brighter the color will be!
+                </div>
+            </li>
+            <li class="welcome__item js-welcome__item">
+                <div class="welcome__item-inner">Let's go!</div>
+            </li>
+        </ul>
 
-    <ul class="drop-area js-drop-area">
-        <li class="drop-area__item" data-type="difference">
-            <span class="drop-area__label">
-                Difference
-            </span>
-        </li>
-        <li class="drop-area__item" data-type="normal">
-            <span class="drop-area__label">
-                Normal
-            </span>
-        </li>
-    </ul>
+        <ul class="drop-area js-drop-area">
+            <li class="drop-area__item" data-type="difference">
+                <span class="drop-area__label">
+                    Difference
+                </span>
+            </li>
+            <li class="drop-area__item" data-type="normal">
+                <span class="drop-area__label">
+                    Normal
+                </span>
+            </li>
+        </ul>
 
-    <canvas class="canvas js-canvas" ></canvas>
+        <canvas class="canvas js-canvas"></canvas>
 
-    <div class="content">
-        <img 
-            class="logo"
-            srcset="assets/logo_1x.png 1x, assets/logo_2x.png 2x" 
-            src="assets/logo_1x.png" 
-            width="80"
-            height="21.5"
-            alt="Pixelsior"
-        />
-    </div>
+        <div class="content">
+            <img
+                class="logo"
+                srcset="assets/logo_1x.png 1x, assets/logo_2x.png 2x"
+                src="assets/logo_1x.png"
+                width="80"
+                height="21.5"
+                alt="Pixelsior"
+            />
+        </div>
 
-    <script src="index.ts"></script>
-</body>
+        <script src="index.ts"></script>
+    </body>
 </html>
