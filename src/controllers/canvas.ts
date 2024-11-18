@@ -117,8 +117,8 @@ export function createCanvasController(params: CanvasControllerParams): CanvasCo
     const { store, elem } = params;
     const ctx = elem.getContext('2d');
     const dpi = getDeviceDpi(ctx);
-    const ctxWidth = window.innerWidth * dpi;
-    const ctxHeight = window.innerHeight * dpi;
+    const ctxWidth = elem.offsetWidth * dpi;
+    const ctxHeight = elem.offsetHeight * dpi;
 
     let innerState: InnerState = {
         pointerInitialCoords: {
